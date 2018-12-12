@@ -249,6 +249,9 @@ print(stats.kstest(x_uni, 'norm', args=(0, 3)))
     KstestResult(statistic=0.5001459915784039, pvalue=0.0)
 
 
+First case - would you fail to reject due to high p-value? 
+Second case - low p-value
+
 
 ```python
 # Your comments here 
@@ -275,10 +278,10 @@ plt.hist(x_1000_bi);
 ```
 
 
-![png](index_files/index_23_0.png)
+![png](index_files/index_24_0.png)
 
 
-### Plot the CDFs for x_100_bimodal and x_1000 and comment on the output 
+### Plot the CDFs for x_100 and x_1000_bi and comment on the output 
 
 
 ```python
@@ -296,28 +299,28 @@ def ks_plot_2sample(data_1, data_2):
     plt.legend(['Data_1', 'Data_2'])
     plt.title('Comparing 2 CDFs for KS-Test')
     
-ks_plot_comp(x_100, x_bimodal_100[:,0])
+ks_plot_2sample(x_100, x_1000_bi[:,0])
 ```
 
 
-![png](index_files/index_25_0.png)
+![png](index_files/index_26_0.png)
 
 
 
 ```python
 # You comments here 
 
-# x_100 and x_100_bi diverge a lot 
+# x_100 and x_1000_bi diverge a lot 
 # We can expect a high value for d statistic 
 
 ```
 
-### Run the two sample KS test on x_100 and x_100_bi and comment on the results
+### Run the two sample KS test on x_100 and x_1000_bi and comment on the results
 
 
 ```python
 # Check if the distributions are equal
-stats.ks_2samp(x_1000, x_bimodal_100[:,0])
+stats.ks_2samp(x_100, x_1000_bi[:,0])
 
 # Ks_2sampResult(statistic=0.575, pvalue=1.2073337530608254e-14)
 ```
